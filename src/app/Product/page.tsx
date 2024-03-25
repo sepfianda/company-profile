@@ -86,8 +86,8 @@ const Product = () => {
             <CardHeader>
               <div className="object-cover">
                 <Image
-                  src="https://drive.google.com/uc?export=view&id=1twthgSIc828ozD0ayKnBE3hfXm_KsDMi
-                  "
+                  src="
+                  https://drive.google.com/uc?export=view&id=1twthgSIc828ozD0ayKnBE3hfXm_KsDMi"
                   alt="thumbnail"
                   width={500}
                   height={100}
