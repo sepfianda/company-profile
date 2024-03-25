@@ -111,8 +111,7 @@ const AboutUs: React.FC = () => {
         {/* Culture */}
         <div className="grid grid-cols-1 gap-5 px-10 pt-10 md:grid-cols-2">
           <Image
-            src="https://drive.google.com/uc?export=view&id=1f8X64fmrdM-inaOTI32O5sJkfPS02V8n
-            "
+            src="https://drive.google.com/uc?export=view&id=1f8X64fmrdM-inaOTI32O5sJkfPS02V8n"
             alt="thumbnail"
             width={500}
             height={100}
