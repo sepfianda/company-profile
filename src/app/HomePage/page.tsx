@@ -1,13 +1,5 @@
-import Image from "next/image";
-import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
+import React from "react";
+import Link from "next/link";
 
 const HomePage: React.FC = () => {
   const url =
@@ -23,42 +18,49 @@ const HomePage: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-[150vh]">
+      <div className="relative md:h-[100vh] h-[50vh] bg-black bg-opacity-40 flex items-center">
         <div className="absolute -z-10 h-full w-full">
           <Image src={url} alt="background" fill objectFit="cover" />
         </div>
 
-        <div className="m-auto justify-between p-10 text-center">
-          <h3 className="text-xl text-white">Welcome To FoofBiz</h3>
-          <h1 className="text-4xl text-white">
+        <div className="mx-auto text-center">
+          <h3 className="pt-20 text-xl font-extrabold text-white md:text-2xl">
+            Welcome To SpoonBoon
+          </h3>
+          <h1 className="text-3xl text-white md:text-5xl">
             From Mundane to Magical, We Cater with Love
           </h1>
         </div>
       </div>
       {/* Company Overview */}
       <div className="bg-[#0e0d0c] text-center">
-        <h1 className="text-3xl text-white p-5">Company Overview</h1>
-        <p className="text-large p-5 text-white">
-          Fine Foods Catering is a newly established company that will provide
+        <h1 className="relative p-5 text-3xl text-white">Company Overview</h1>
+        <p className="text-large relative p-5 text-white">
+          SpoonBoon Catering is a newly established company that will provide
           catering services for a variety of events and clients. Our services
           will include menu creation designed for every client's tastes and
           requirements, food preparation, delivery, service, and cleanup.
-          Clients will receive ultimate value when choosing Fine Foods Catering
-          for their next event. Fine Foods Catering will be owned and managed by
-          local Chef Charlotte Gardea. Chef Charlotte has over 20 years of
-          culinary and hospitality experience and is a graduate of Le Cordon
-          Bleu Culinary Academy.
+          Clients will receive ultimate value when choosing SpoonBoon for their
+          next event. SpoonBoon will be owned and managed by local Chef
+          Charlotte Gardea. Chef Charlotte has over 20 years of culinary and
+          hospitality experience and is a graduate of Le Cordon Bleu Culinary
+          Academy.
         </p>
+        <Button>
+          <Link href="/AboutUs">READ MORE</Link>
+        </Button>
       </div>
       {/* Products */}
       <div className="bg-[#0e0d0c]">
-        <h1 className="p-5 text-center text-3xl text-white">Our Best Menu</h1>
-        <div className="grid grid-cols-3 gap-8 p-6">
+        <h1 className="p-5 pt-10 text-center text-3xl text-white">
+          Our Best Menu
+        </h1>
+        <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-3">
           <Card>
             <CardHeader>
               <div className="object-cover">
                 <Image
-                  src="/menu1.avif"
+                  src="https://drive.google.com/uc?export=view&id=1k9LGYIIYSwVQJk2mjqeBrtN-cVTUnLvM"
                   alt="thumbnail"
                   width={500}
                   height={100}
@@ -66,14 +68,14 @@ const HomePage: React.FC = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <h3 className="text-center">MENU1</h3>
+              <h3 className="text-center font-bold">GARLIC BUTTER SHRIMP SCAMPI</h3>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <div className="object-cover">
                 <Image
-                  src="/menu2.avif"
+                  src="https://drive.google.com/uc?export=view&id=16Lto1QVi8DD89PLTyLNTJ18WU9QeM1RD"
                   alt="thumbnail"
                   width={500}
                   height={100}
@@ -81,14 +83,16 @@ const HomePage: React.FC = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <h3 className="text-center">MENU2</h3>
+              <h3 className="text-center font-bold">
+                GRILLED CHICKEN WITH ROASTED GARLIC AND POTATO
+              </h3>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <div className="object-cover">
                 <Image
-                  src="/menu3.avif"
+                  src="https://drive.google.com/uc?export=view&id=1G5cwa3Slh02Xs-npRgrI7vcBgwK9plGs"
                   alt="thumbnail"
                   width={500}
                   height={100}
@@ -96,9 +100,14 @@ const HomePage: React.FC = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <h3 className="text-center">MENU3</h3>
+              <h3 className="text-center font-bold">MELTED MIX ICE CREAM</h3>
             </CardContent>
           </Card>
+        </div>
+        <div className="text-center pt-5">
+        <Button className="items-center">
+          <Link href="/Product">ANOTHER MENU</Link>
+        </Button>
         </div>
       </div>
       {/* Testimonial */}
@@ -109,20 +118,20 @@ const HomePage: React.FC = () => {
             <CarouselContent className="-ml-2 gap-8 text-white md:-ml-4">
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
-                  I just wanted to say thank you to spoonboon team. The food
+                  I just wanted to say thank you to SpoonBoon team. The food
                   quality was great. The food presentation was great and
                   although we were late sitting down the service was brilliant.
                   The team did a fantastic job and I have had lovely feedback
                   from everyone that attended my daughter's birthday party.
                 </h3>
-                <p className="text-center py-6">Milan</p>
+                <p className="py-6 text-center">Milan</p>
               </CarouselItem>
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
                   The food is extremely good; prices are very reasonable
                   considering the quantity of food, my new favourite now.
                 </h3>
-                <p className="text-center py-6">Joyeeta</p>
+                <p className="py-6 text-center">Joyeeta</p>
               </CarouselItem>
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
@@ -133,14 +142,14 @@ const HomePage: React.FC = () => {
                   other caterer I've ever hired, so hopefully we will find
                   another occasion to celebrate with you soon!
                 </h3>
-                <p className="text-center py-6">Munish Trukral</p>
+                <p className="py-6 text-center">Munish Trukral</p>
               </CarouselItem>
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
                   They were total professional as every single one of our guests
                   loved the authentic food. Thank u so much!
                 </h3>
-                <p className="text-center py-6">MDI</p>
+                <p className="py-6 text-center">MDI</p>
               </CarouselItem>
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
@@ -149,7 +158,7 @@ const HomePage: React.FC = () => {
                   all our needs throughout the evening and helped clean up all
                   the mess.
                 </h3>
-                <p className="text-center py-6">Sunil Sharma</p>
+                <p className="py-6 text-center">Sunil Sharma</p>
               </CarouselItem>
               <CarouselItem className="border border-white p-8 md:basis-1/2 lg:basis-1/3">
                 <h3 className="text-justify">
@@ -157,7 +166,7 @@ const HomePage: React.FC = () => {
                   thanks to spoonboon team for the wonderful show put together
                   for our house party.
                 </h3>
-                <p className="text-center py-6">Himesh Bhatnagar</p>
+                <p className="py-6 text-center">Himesh Bhatnagar</p>
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
