@@ -53,17 +53,18 @@ const AboutUs: React.FC = () => {
         </div>
         {/* TEAM */}
         <div className="bg-[#0e0d0c] pt-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-5 text-white">
+          <div className="grid grid-cols-1 gap-5 px-5 text-white md:grid-cols-3">
             <div>
-              <Image
-                src="https://drive.google.com/uc?export=view&id=1it1ALnxd3ulV1PrPNQLbhelVPA1FLMtp"
-                alt="thumbnail"
-                width={350}
-                height={100}
-                className="rounded-full pb-5"
-              />
+              <div className="relative mx-auto md:h-72 md:w-72">
+                <Image
+                  src="https://drive.google.com/uc?export=view&id=1it1ALnxd3ulV1PrPNQLbhelVPA1FLMtp"
+                  alt="thumbnail"
+                  fill
+                  className="rounded-full object-cover pb-5"
+                />
+              </div>
               <Card>
-                <CardHeader className="pt-5 text-center bg-[#31363F] text-white">
+                <CardHeader className="bg-[#76ABAE] pt-5 text-center text-white">
                   <h3>Chef Charlotte Gardea</h3>
                   <h1 className="pt-2">OWNER</h1>
                   <p className="pt-2">Le Cordon Bleu Culinary Academy</p>
@@ -71,32 +72,33 @@ const AboutUs: React.FC = () => {
               </Card>
             </div>
             <div>
-              <Image
-                src="https://drive.google.com/uc?export=view&id=1wHdE2bos6akPRiwDn_W9rGiuJxjI8u8t"
-                alt="thumbnail"
-                width={550}
-                height={100}
-                className="rounded-full pb-12"
-              />
-              <Card>
-                <CardHeader className="pt-8 text-center bg-[#31363F] text-white">
+              <div className="relative mx-auto md:h-72 md:w-72">
+                <Image
+                  src="https://drive.google.com/uc?export=view&id=1wHdE2bos6akPRiwDn_W9rGiuJxjI8u8t"
+                  alt="thumbnail"
+                  fill
+                  className="rounded-full object-cover pb-5"
+                />
+              </div>
+              <Card className="pt-15 gap-y-4">
+                <CardHeader className="bg-[#76ABAE] text-center text-white">
                   <h3>Chef Robbins Anthony</h3>
                   <h1 className="pt-2">HEAD SENIOR CHEF</h1>
                   <p className="pt-2">Le Cordon Bleu Culinary Academy</p>
                 </CardHeader>
               </Card>
             </div>
-
             <div>
+            <div className="relative mx-auto md:h-72 md:w-72">
               <Image
                 src="https://drive.google.com/uc?export=view&id=1pPrgf0Zs0zACVOKyxf-SmbXlqFGP5ORE"
                 alt="thumbnail"
-                width={550}
-                height={100}
-                className="rounded-full pb-12"
+                fill
+                className="rounded-full object-cover pb-5"
               />
+              </div>
               <Card>
-                <CardHeader className="pt-8 text-center bg-[#31363F] text-white">
+                <CardHeader className="bg-[#76ABAE] pt-8 text-center text-white">
                   <h3>Chef Julia Chloe</h3>
                   <h1 className="pt-2">HEAD JUNIOR CHEF</h1>
                   <p className="pt-2">Le Cordon Bleu Culinary Academy</p>

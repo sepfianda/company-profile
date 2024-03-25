@@ -1,77 +1,56 @@
-"use client"
-import React, { useState, useEffect } from 'react'
-import { FaPhone, FaUserAlt } from 'react-icons/fa'
-import { AiOutlineMail } from 'react-icons/ai'
+import Image from "next/image";
+
+interface Employee {
+  results: {
+    name: {
+      first: string;
+      last: string;
+    };
+    email: string;
+    phone: string;
+    picture: {
+      large: string;
+    };
+  }[];
+}
+
+const Teams = async () => {
+  const response = await fetch("https://randomuser.me/api/?results=10");
+  const employees: Employee = await response.json();
+
+  return (
+    <main>
+      <div className="bg-[#0e0d0c]">
+        <h1 className="pt-28 pb-10 text-center font-bold text-4xl text-[#BF3131]">
+          Our Teams
+        </h1>
+      </div>
 
 
-const url = `https://randomuser.me/api`
+      <div className="bg-[#0e0d0c] flex flex-col items-center justify-center md:grid md:grid-cols-5 gap-8 md:px-10">
+        {employees.results.map((employee, index) => (
+          <div
+            key={index}
+            className="max-w-xs flex flex-col rounded overflow-hidden shadow-lg w-full items-center"
+          >
+            <div>
+            <Image
+              src={employee.picture.large}
+              alt={`${employee.name.first} ${employee.name.last}`}
+              width={300}
+              height={300}
+            />
+            </div>
+            <div className="px-6 py-4 text-center text-white pb-20">
+              <div className="font-bold text-xl mb-2">{`${employee.name.first} ${employee.name.last}`}</div>
+              <p>{employee.email}</p>
+              <p>Phone: {employee.phone}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+};
 
-const Teams: React.FC = () => {
-    const [users, setUsers] = useState([])
-
-    const fetchUserData = async () => {
-      const resp = await fetch(url)
-      const users = await resp.json()
-      setUsers(users.results)
-    }
-  
-    useEffect(() => {
-      fetchUserData()
-    }, [])
-  
-    return (
-      <>
-        <section className="bg-gray-900 py-20 px-10 md:h-screen">
-          {users.map((user) => {
-            const {
-              name: { title, first, last },
-              email,
-              login: { uuid, username },
-              phone,
-              picture: { large },
-            } = user
-  
-            return (
-              <div
-                key={uuid}
-                className="bg-gray-200 px-5 py-10 rounded-lg lg:w-9/12 lg:mx-auto 2xl:w-1/2 2xl:px-10"
-              >
-                <img
-                  src={large}
-                  alt={first}
-                  className="block mx-auto rounded-full"
-                />
-                <div className="text-center">
-                  <h3 className="text-3xl my-3">
-                    {title}. {first} {last}
-                  </h3>
-                </div>
-  
-                <div className="md:flex md:justify-between">
-                  <div>
-                    <p className="flex items-center my-3">
-                      <AiOutlineMail className="mr-2 text-xl" /> {email}
-                    </p>
-                    <p className="flex items-center my-3">
-                      <FaUserAlt className="mr-2 text-xl" /> {username}
-                    </p>
-                    <p className="flex items-center my-3">
-                      <FaPhone className="mr-2 text-xl" /> {phone}
-                    </p>
-                  </div>
-  
-                </div>
-                <button
-                  onClick={() => fetchUserData()}
-                  className="block mx-auto mt-5 bg-gray-900 text-white py-1 px-4 rounded-lg transition-colors hover:bg-gray-600"
-                >
-                  Next Person
-                </button>
-              </div>
-            )
-          })}
-        </section>
-      </>
-    )
-  }
-export default Teams
+export default Teams;

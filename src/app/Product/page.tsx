@@ -20,9 +20,10 @@ const Product = () => {
   return (
     <div>
       <div className="bg-[#0e0d0c] py-10">
-        <h1 className="pt-20 text-center text-3xl font-extrabold text-white">
+        <h1 className="pt-20 text-center text-3xl font-extrabold text-[#BF3131]">
           OUR DELICIOUS APPETIZERS
         </h1>
+        <hr className="mx-auto w-1/2 border-b-4 solid border-[#EAD196]" />
         <div className="grid grid-cols-1 gap-8 px-5 pt-20 md:grid-cols-3">
           <Card>
             <CardHeader>
@@ -112,9 +113,10 @@ const Product = () => {
             </CardContent>
           </Card>
         </div>
-        <h1 className="pt-20 px-5 text-center text-3xl font-extrabold text-white">
+        <h1 className="pt-20 px-5 text-center text-3xl font-extrabold text-[#BF3131]">
           OUR DELICIOUS MAIN COURSE
         </h1>
+        <hr className="mx-auto w-1/2 border-b-4 solid border-[#EAD196]" />
         <div className="grid grid-cols-1 gap-8 px-5 pt-20 md:grid-cols-3">
           <Card>
             <CardHeader>
@@ -204,9 +206,10 @@ const Product = () => {
             </CardContent>
           </Card>
         </div>
-        <h1 className="pt-20 px-5 text-center text-3xl font-extrabold text-white">
+        <h1 className="pt-20 px-5 text-center text-3xl font-extrabold text-[#BF3131]">
           OUR DELICIOUS DESSERT
         </h1>
+        <hr className="mx-auto w-1/2 border-b-4 solid border-[#EAD196]" />
         <div className="grid grid-cols-1 gap-8 px-5 pt-20 md:grid-cols-3">
           <Card>
             <CardHeader>
@@ -293,9 +296,10 @@ const Product = () => {
         </div>
         {/* Testimonial */}
         <div className="items-center bg-[#0e0d0c] p-20">
-          <div className="mb-8 text-center text-3xl text-white">
+          <div className="text-center text-3xl text-[#BF3131]">
             Testimonials
           </div>
+          <hr className="mb-8 mx-auto w-1/3 border-b-4 solid border-[#EAD196]" />
           <div>
             <Carousel>
               <CarouselContent className="-ml-2 gap-8 text-white md:-ml-4">

@@ -34,7 +34,8 @@ const HomePage: React.FC = () => {
       </div>
       {/* Company Overview */}
       <div className="bg-[#0e0d0c] text-center">
-        <h1 className="relative p-5 text-3xl text-white">Company Overview</h1>
+        <h1 className="relative p-5 text-3xl text-[#EAD196]">Company Overview</h1>
+        <hr className="mb-8 mx-auto w-1/3 border-b-4 solid border-[#BF3131]" />
         <p className="text-large relative p-5 text-white">
           SpoonBoon Catering is a newly established company that will provide
           catering services for a variety of events and clients. Our services
@@ -46,15 +47,16 @@ const HomePage: React.FC = () => {
           hospitality experience and is a graduate of Le Cordon Bleu Culinary
           Academy.
         </p>
-        <Button>
+        <Button className="bg-red-700">
           <Link href="/AboutUs">READ MORE</Link>
         </Button>
       </div>
       {/* Products */}
       <div className="bg-[#0e0d0c]">
-        <h1 className="p-5 pt-10 text-center text-3xl text-white">
+        <h1 className="p-5 pt-10 text-center text-3xl text-[#EAD196]">
           Our Best Menu
         </h1>
+        <hr className="mb-8 mx-auto w-1/3 border-b-4 solid border-[#BF3131]" />
         <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-3">
           <Card>
             <CardHeader>
@@ -105,14 +107,15 @@ const HomePage: React.FC = () => {
           </Card>
         </div>
         <div className="text-center pt-5">
-        <Button className="items-center">
+        <Button className="items-center bg-red-700">
           <Link href="/Product">ANOTHER MENU</Link>
         </Button>
         </div>
       </div>
       {/* Testimonial */}
       <div className="items-center bg-[#0e0d0c] p-20">
-        <div className="mb-8 text-center text-3xl text-white">Testimonials</div>
+        <div className="mb-8 text-center text-3xl text-[#EAD196]">Testimonials</div>
+        <hr className="mb-8 mx-auto w-1/3 border-b-4 solid border-[#BF3131]" />
         <div>
           <Carousel>
             <CarouselContent className="-ml-2 gap-8 text-white md:-ml-4">
